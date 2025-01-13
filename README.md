@@ -1,13 +1,16 @@
-# Sample Hardhat Project
+# KOBAC-GroovyBet
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+KOBAC BlockChain Valley team E
+Risk 관리가 가능한 이슈 베팅 시스템, GroovyBet 입니다.
 
-Try running some of the following tasks:
+------------------------------------------------------------------------------------------
+
+### 개발
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+npm run dev
 ```
+localhost:4000으로 Server에 접근가능
+localhost:3000으로 Web FrontEnd에 접근가능
+
+Nest.js로 서버 구성, Next.js로 웹 구성, hardhat을 통해 솔리디티 스마트컨트랙트 구성
