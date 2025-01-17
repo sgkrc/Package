@@ -4,18 +4,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-bottom: 1px solid #ddd;
 }
 
 .logo {
-  margin-left: 2em;
-  margin-right: 1em;
+  margin-left: 1.5em;
+  margin-right: 0.5em;
 }
 
 .searchSection {
   height: 100%;
-  width: 60%;
+  width: 50%;
   position: relative;
   display: flex;
   align-items: center;
@@ -102,8 +102,8 @@
 }
 
 .connectWallet {
-  height: 3em;
-  width: 8em;
+  height: 4em;
+  width: 9em;
   border-radius: 20px;
   background: #16166d;
   box-shadow: 0px 4px 8px 3px rgba(221, 221, 221, 0.5);

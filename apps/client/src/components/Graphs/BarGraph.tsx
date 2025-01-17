@@ -19,7 +19,6 @@ export default function BarGraph({ optionDatas, totalVolume }: BarGraphProps) {
 
   const calculateRatio = (volume: number) => {
     const ratio = (volume / totalVolume) * 100;
-    console.log(ratio);
     return { height: `${ratio}%` };
   };
 
