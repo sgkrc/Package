@@ -6,12 +6,14 @@ interface CartSectionProps {
   options: OptionData[];
   selectedOptionID: number | undefined;
   resetOptionState: () => void;
+  showModal: () => void;
 }
 
 export default function AddCartSection({
   options,
   selectedOptionID,
   resetOptionState,
+  showModal,
 }: CartSectionProps) {
   const [amount, setAmount] = useState(0);
 
@@ -51,7 +53,15 @@ export default function AddCartSection({
           +
         </button>
       </div>
-      <button className={s.addCart}>Add to Portfolio!</button>
+      {selectedOptionID === undefined ? (
+        <button className={s.disabledButton} onClick={showModal}>
+          Add to Portfolio!
+        </button>
+      ) : (
+        <button className={s.addCart} onClick={showModal}>
+          Add to Portfolio!
+        </button>
+      )}
     </div>
   );
 }

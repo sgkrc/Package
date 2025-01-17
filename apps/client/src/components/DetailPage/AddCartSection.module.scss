@@ -1,6 +1,7 @@
 $wid: calc(100% - 20px);
 
 .container {
+  position: relative;
   height: 40%;
   width: calc(100% - 20px);
   display: flex;
@@ -49,6 +50,22 @@ $wid: calc(100% - 20px);
   font-size: 20px;
 }
 
+.disabledButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 30%;
+  border-radius: 20px;
+  border: 1px solid #dddddd;
+  background: #dddddd;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 1em 1em;
+}
+
 .addCart {
   display: flex;
   align-items: center;
@@ -62,4 +79,8 @@ $wid: calc(100% - 20px);
   font-size: 20px;
   color: #ffffff;
   padding: 1em 1em;
+}
+
+.addCart:hover {
+  cursor: pointer;
 }

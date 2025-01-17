@@ -17,6 +17,7 @@ export interface DetailPageData {
   volume: number;
   options: OptionData[];
   like: boolean;
+  price: number;
 }
 
 export type DetailPageDatas = DetailPageData[];
@@ -52,6 +53,7 @@ export const detailPage: DetailPageDatas = [
       { name: "Option2", volume: 10000000 },
     ],
     like: true,
+    price: 1,
   },
   {
     id: 2,
@@ -62,6 +64,7 @@ export const detailPage: DetailPageDatas = [
       { name: "Option2", volume: 170000 },
     ],
     like: false,
+    price: 0.8,
   },
   {
     id: 3,
@@ -73,6 +76,7 @@ export const detailPage: DetailPageDatas = [
       { name: "Option3", volume: 200000000 },
     ],
     like: false,
+    price: 0.2,
   },
   {
     id: 4,
@@ -84,6 +88,7 @@ export const detailPage: DetailPageDatas = [
       { name: "Option3", volume: 2000000 },
     ],
     like: true,
+    price: 0.4,
   },
   {
     id: 5,
@@ -95,6 +100,7 @@ export const detailPage: DetailPageDatas = [
       { name: "Option3", volume: 2000000 },
     ],
     like: true,
+    price: 1,
   },
   {
     id: 6,
@@ -106,5 +112,6 @@ export const detailPage: DetailPageDatas = [
       { name: "Option3", volume: 2000000 },
     ],
     like: false,
+    price: 1,
   },
 ];

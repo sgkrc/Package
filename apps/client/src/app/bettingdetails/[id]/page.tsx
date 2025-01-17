@@ -7,21 +7,18 @@ import Image from "next/image";
 import BarGraph from "@/components/Graphs/BarGraph";
 import Option from "@/components/DetailPage/Option";
 
-interface DetailParam {
-  id: number;
-}
-
-export default function EventDetails({ id }: DetailParam) {
+export default function EventDetails() {
   const [data, setData] = useState<DetailPageData>();
   const [like, setLike] = useState<boolean>(false);
 
+  const id = 3; //id서버로 전송하고 받아오는 로직필요
+
   useEffect(() => {
-    console.log(id);
-    const preprocessedData = detailPage;
-    preprocessedData.filter((item) => {
+    const preprocessedData = detailPage.find((item) => {
       return item.id === id;
     });
-    setData(preprocessedData[0]);
+    console.log(`preprocessedData: ${preprocessedData}`);
+    setData(preprocessedData);
     if (data) setLike(data.like);
     console.log(data);
   }, [id, data]);
