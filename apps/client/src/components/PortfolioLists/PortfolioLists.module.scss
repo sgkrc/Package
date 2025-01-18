@@ -1,0 +1,93 @@
+.container {
+  height: 61%;
+  width: 95%;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 8px 3px rgba(221, 221, 221, 0.5);
+}
+
+.title {
+  margin: 0 0 0 20px;
+  padding-top: 10px;
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.selectedItem {
+  position: relative;
+  height: 3em;
+  width: calc(90% - 2em);
+  padding: 0 2em 0 0;
+  margin: 3% 5% 0.5% 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #888;
+  background: #dddddd;
+  color: #000;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-weight: 400;
+  text-wrap: wrap;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+  }
+  &.showEvents {
+    background: #ffffff;
+  }
+}
+
+.triangle {
+  position: absolute;
+  top: 1.2em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  border-top: 0.6em solid #000;
+  border-bottom: 0.6em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
+}
+
+.dropDown {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  background: #ffffff;
+  height: 400%;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #888;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventName {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pretendard";
+  list-style-type: none;
+  border-bottom: 1px solid #bbbbbb;
+  padding: 0.2em 0;
+  &:hover {
+    background: #eeeeee;
+  }
+}
+
+.graphSection {
+  width: 100%;
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -25,17 +25,32 @@ type TempEvents = TempEvent[];
 
 export const tempEvents: TempEvents = [
   {
-    eventName: "event1",
+    eventName: "Event1",
     options: [
       { name: "op1", volume: 80 },
       { name: "op2", volume: 20 },
     ],
   },
   {
-    eventName: "event2",
+    eventName: "Event2",
     options: [
-      { name: "op1", volume: 40 },
-      { name: "op2", volume: 60 },
+      { name: "op1", volume: 20 },
+      { name: "op2", volume: 30 },
+      { name: "op3", volume: 50 },
+    ],
+  },
+  {
+    eventName: "Event3",
+    options: [
+      { name: "op1", volume: 10 },
+      { name: "op2", volume: 90 },
+    ],
+  },
+  {
+    eventName: "Event4",
+    options: [
+      { name: "op1", volume: 19 },
+      { name: "op2", volume: 81 },
     ],
   },
 ];

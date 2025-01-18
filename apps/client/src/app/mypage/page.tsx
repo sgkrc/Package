@@ -1,42 +1,44 @@
-import { eventDatas } from "@/mock/myPageData";
+"use client";
+
 import s from "./mypage.module.scss";
+import Risk from "@/components/Risk/Risk";
+import PortfolioLists from "@/components/PortfolioLists/PortfolioLists";
+import { useEffect, useState } from "react";
+import {
+  tempPortfolioData,
+  TempPortfolioData,
+} from "@/mock/temporaryPortfolio";
+import DoughnutGraph from "@/components/Graphs/DoughnutGraph";
 
 export default function MyPage() {
-  const createConicGradient = () => {
-    const colors = ["#7373A7", "#44448A", "#16166d"];
-    const gap = 0.3;
-    let gradientStops = "";
-    let accumulatedPercentage = 0;
+  const [data, setData] = useState<TempPortfolioData>();
+  const [modalState, setModalState] = useState(false);
 
-    eventDatas.forEach((event, index) => {
-      const color = colors[index % colors.length];
-      const start = accumulatedPercentage;
-      const end = accumulatedPercentage + event.volume - gap;
-
-      gradientStops += `${color} ${start}% ${end}%, `;
-      accumulatedPercentage = end + gap;
-
-      gradientStops += `transparent ${end}% ${accumulatedPercentage}%, `;
-    });
-
-    return `conic-gradient(${gradientStops.slice(0, -2)})`;
+  const handleModalState = () => {
+    setModalState(!modalState);
   };
+
+  useEffect(() => {
+    setData(tempPortfolioData);
+  }, []);
 
   return (
     <div className={s.pageContainer}>
-      <h2>Portfolio Chart</h2>
-      <div
-        className={s.donutChart}
-        style={{
-          backgroundImage: createConicGradient(),
-        }}
-      >
-        <div className={s.innerText}>
-          {eventDatas.map((event) => (
-            <div key={event.name}>
-              <span>{`${event.volume}% ${event.name}`}</span>
-            </div>
-          ))}
+      <div className={s.menuSection}>
+        <div className={s.titleContainer}>
+          <button className={s.detailButton} onClick={handleModalState}>
+            Show Portfolio Details
+          </button>
+        </div>
+        <div className={s.connectWallet}>Please Connect Your Wallet First!</div>
+      </div>
+      <div className={s.content}>
+        <div className={s.detailSection}>
+          {data === undefined ? "" : <DoughnutGraph data={data} />}
+        </div>
+        <div className={s.riskSection}>
+          <Risk risk={data?.risk} />
+          <PortfolioLists tempEvents={data?.tempEvents} />
         </div>
       </div>
     </div>
