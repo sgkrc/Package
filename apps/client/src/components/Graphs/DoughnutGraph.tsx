@@ -1,4 +1,3 @@
-import { eventDatas } from "@/mock/myPageData";
 import s from "./DoughnutGraph.module.scss";
 import { TempPortfolioData } from "@/mock/temporaryPortfolio";
 
@@ -7,45 +6,51 @@ interface DoughnutGraphProps {
 }
 
 export default function DoughnutGraph({ data }: DoughnutGraphProps) {
-  const createConicGradient = () => {
-    const colors = [
-      "#5da0fc",
-      "b2a0fa",
-      "#99eeff",
-      "#16166d",
-      "4e23fa",
-      "157496",
-    ];
-    const gap = 0.3;
-    let gradientStops = "";
-    let accumulatedPercentage = 0;
+  const total = data.portfolioDetails.reduce(
+    (acc, cur) => acc + cur.amount * cur.price,
+    0
+  );
 
-    eventDatas.forEach((event, index) => {
-      const color = colors[index % colors.length];
-      const start = accumulatedPercentage;
-      const end = accumulatedPercentage + event.volume - gap;
+  const ratioList: number[] = [];
+  data.portfolioDetails.forEach((detail) => {
+    ratioList.push(
+      Number((((detail.amount * detail.price) / total) * 100).toFixed(0))
+    );
+  });
 
-      gradientStops += `${color} ${start}% ${end}%, `;
-      accumulatedPercentage = end + gap;
+  // 색상 목록 (필요에 따라 추가 가능)
+  const colors = [
+    "#16166d",
+    "#5151BE",
+    "#9898D9",
+    "#89B7DC",
+    "#9DE0F5",
+    "#417e91",
+    "#89b7dc",
+    "#ECECFF",
+  ];
 
-      gradientStops += `transparent ${end}% ${accumulatedPercentage}%, `;
-    });
+  // conic-gradient 스타일 생성
+  let cumulativeRatio = 0;
+  const segments = ratioList.map((ratio, idx) => {
+    const start = cumulativeRatio;
+    cumulativeRatio += ratio;
+    if (idx !== 0 && idx % colors.length === 0)
+      return `${
+        colors[(idx % colors.length) + 1]
+      } ${start}% ${cumulativeRatio}%`;
+    return `${colors[idx % colors.length]} ${start}% ${cumulativeRatio}%`;
+  });
+  const backgroundStyle = `conic-gradient(${segments.join(", ")})`;
 
-    return `conic-gradient(${gradientStops.slice(0, -2)})`;
-  };
   return (
     <div className={s.pageContainer}>
       <h2 className={s.title}>Portfolio Chart</h2>
-      <div
-        className={s.donutChart}
-        style={{
-          backgroundImage: createConicGradient(),
-        }}
-      >
+      <div className={s.donutChart} style={{ background: backgroundStyle }}>
         <div className={s.innerText}>
-          {eventDatas.map((event) => (
-            <div key={event.name}>
-              <span>{`${event.volume}% ${event.name}`}</span>
+          {data.portfolioDetails.map((detail, idx) => (
+            <div key={idx}>
+              <span>{`${ratioList[idx]}% ${detail.eventName}`}</span>
             </div>
           ))}
         </div>

@@ -43,7 +43,9 @@ export const tempEvents: TempEvents = [
     eventName: "Event3",
     options: [
       { name: "op1", volume: 10 },
-      { name: "op2", volume: 90 },
+      { name: "op2", volume: 32 },
+      { name: "op1", volume: 10 },
+      { name: "op2", volume: 48 },
     ],
   },
   {
@@ -66,3 +68,9 @@ export const tempPortfolioData = {
   tempEvents: tempEvents,
   risk: 80,
 };
+
+export interface MyPageData {
+  portfolioDetails: PortfolioDetails;
+  Events: TempEvents;
+  risk: number;
+}
