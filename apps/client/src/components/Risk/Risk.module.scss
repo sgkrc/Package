@@ -1,0 +1,114 @@
+.container {
+  height: 35%;
+  width: 95%;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 8px 3px rgba(221, 221, 221, 0.5);
+}
+
+.title {
+  margin: 0 0 0 20px;
+  padding-top: 10px;
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.barSection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.percent {
+  color: #000;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bar {
+  position: relative;
+  width: 70%;
+  height: 8px;
+  appearance: none;
+  background: linear-gradient(270deg, #16166d 0%, #5151be 40%, #9de0f5 100%);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  &::-webkit-slider-thumb {
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 100px;
+    border: 3px solid #16166d;
+    background: #ffffff;
+  }
+  &::-ms-thumb {
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 100px;
+    border: 3px solid #16166d;
+    background: #ffffff;
+  }
+  &::-moz-range-thumb {
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 100px;
+    border: 3px solid #16166d;
+    background: #ffffff;
+  }
+}
+
+.indicatorSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 2em;
+  width: 4em;
+  color: #000;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.disabledButton {
+  height: 3em;
+  min-width: 8em;
+  border-radius: 20px;
+  background: #dddddd;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.acceptButton {
+  height: 3em;
+  min-width: 8em;
+  border-radius: 20px;
+  background: #16166d;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-weight: 700;
+}
