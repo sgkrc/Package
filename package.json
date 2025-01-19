@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/KOBAC-GroovyBet/Package#readme",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0",
     "concurrently": "^9.1.2"
   },
   "devDependencies": {
