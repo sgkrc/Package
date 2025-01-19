@@ -1,0 +1,103 @@
+.modalBackGround {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  z-index: 101;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  overflow-y: auto;
+  z-index: 4;
+}
+
+.modalHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 1em 0 1em 1em;
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.closeButton {
+  margin-right: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.eventItem {
+  width: 90%;
+  margin: 0.5em 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #888;
+}
+
+.eventTitle {
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.decisionSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.discription {
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.decision {
+  color: #5151be;
+  font-family: "Pretendard";
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 0 0.5em;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail {
+  color: #888;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+}

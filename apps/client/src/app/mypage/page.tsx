@@ -9,6 +9,7 @@ import {
   TempPortfolioData,
 } from "@/mock/temporaryPortfolio";
 import DoughnutGraph from "@/components/Graphs/DoughnutGraph";
+import DetailModal from "@/components/Modal/DetailModal";
 
 export default function MyPage() {
   const [data, setData] = useState<TempPortfolioData>();
@@ -22,8 +23,20 @@ export default function MyPage() {
     setData(tempPortfolioData);
   }, []);
 
+  if (data === undefined) {
+    return <div>Network Error</div>;
+  }
+
   return (
     <div className={s.pageContainer}>
+      {modalState ? (
+        <DetailModal
+          portfolioDetails={data?.portfolioDetails}
+          disableModal={handleModalState}
+        />
+      ) : (
+        ""
+      )}
       <div className={s.menuSection}>
         <div className={s.titleContainer}>
           <button className={s.detailButton} onClick={handleModalState}>
