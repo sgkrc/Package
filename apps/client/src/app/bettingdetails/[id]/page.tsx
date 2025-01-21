@@ -6,10 +6,12 @@ import s from "./DetailPage.module.scss";
 import Image from "next/image";
 import BarGraph from "@/components/Graphs/BarGraph";
 import Option from "@/components/DetailPage/Option";
+import { useWallet } from "@/app/walletcontext";
 
 export default function EventDetails() {
   const [data, setData] = useState<DetailPageData>();
   const [like, setLike] = useState<boolean>(false);
+  const {walletAddress} = useWallet();
 
   const id = 3; //id서버로 전송하고 받아오는 로직필요
 
@@ -35,7 +37,7 @@ export default function EventDetails() {
     <div className={s.pageContainer}>
       <div className={s.menuSection}>
         <div className={s.titleContainer}>{data.title}</div>
-        <div className={s.connectWallet}>Please Connect Your Wallet First!</div>
+        <div className={s.connectWallet}>{walletAddress? `Hello, ${walletAddress}` : "Please Connect Your Wallet First!"}</div>
       </div>
       <div className={s.content}>
         <div className={s.imageSection}>
