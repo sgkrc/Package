@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./index.css";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import {WalletProvider} from "./walletcontext"
+
 
 export const metadata: Metadata = {
   title: "GroovyBet",
@@ -16,10 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
+        <WalletProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+      </WalletProvider>
+               
+     </body>
     </html>
   );
 }

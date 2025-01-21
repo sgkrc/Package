@@ -9,9 +9,11 @@ import {
 } from "@/mock/temporaryPortfolio";
 import Risk from "@/components/Risk/Risk";
 import PortfolioLists from "@/components/PortfolioLists/PortfolioLists";
+import { useWallet } from "../walletcontext";
 
 export default function TemporaryPortfolio() {
   const [data, setData] = useState<TempPortfolioData>();
+  const {walletAddress} = useWallet();
 
   useEffect(() => {
     setData(tempPortfolioData);
@@ -21,7 +23,7 @@ export default function TemporaryPortfolio() {
     <div className={s.pageContainer}>
       <div className={s.menuSection}>
         <div className={s.titleContainer}></div>
-        <div className={s.connectWallet}>Please Connect Your Wallet First!</div>
+        <div className={s.connectWallet}>{walletAddress? `Hello, ${walletAddress}`: "Please Connect Your Wallet First!"}</div>
       </div>
       <div className={s.content}>
         <div className={s.detailSection}>

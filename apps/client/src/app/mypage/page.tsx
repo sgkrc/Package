@@ -10,10 +10,12 @@ import {
 } from "@/mock/temporaryPortfolio";
 import DoughnutGraph from "@/components/Graphs/DoughnutGraph";
 import DetailModal from "@/components/Modal/DetailModal";
+import { useWallet } from "../walletcontext";
 
 export default function MyPage() {
   const [data, setData] = useState<TempPortfolioData>();
   const [modalState, setModalState] = useState(false);
+  const {walletAddress} = useWallet();
 
   const handleModalState = () => {
     setModalState(!modalState);
@@ -43,7 +45,7 @@ export default function MyPage() {
             Show Portfolio Details
           </button>
         </div>
-        <div className={s.connectWallet}>Please Connect Your Wallet First!</div>
+        <div className={s.connectWallet}>{walletAddress? `Hello, ${walletAddress}`: "Please Connect Your Wallet First!"}</div>
       </div>
       <div className={s.content}>
         <div className={s.detailSection}>

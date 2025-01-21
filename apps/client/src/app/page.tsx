@@ -6,12 +6,13 @@ import Category from "@/components/Category/Category";
 import Image from "next/image";
 import Link from "next/link";
 import { mainPage, MainPageDatas } from "@/mock/pageData";
-
+import { useWallet } from "./walletcontext";
 export type SortType = "Top" | "Trending" | "New" | "All";
 
 export default function Home() {
   const [selected, setSelected] = useState<SortType>("Top");
   const [data, setData] = useState<MainPageDatas>();
+  const {walletAddress} = useWallet();
 
   useEffect(() => {
     setData(mainPage);
@@ -47,7 +48,8 @@ export default function Home() {
           <Category category="New" selected={selected} onClick={selectNew} />
           <Category category="All" selected={selected} onClick={selectAll} />
         </div>
-        <div className={s.connectWallet}>Please Connect Your Wallet First!</div>
+        <div className={s.connectWallet}>
+          {walletAddress? `Hello, ${walletAddress}` : "Please Connect Your Wallet First!"}</div>
       </div>
 
       <div className={s.contentSection}>
