@@ -18,7 +18,6 @@ export default function DoughnutGraph({ data }: DoughnutGraphProps) {
     );
   });
 
-  // 색상 목록 (필요에 따라 추가 가능)
   const colors = [
     "#16166d",
     "#5151BE",

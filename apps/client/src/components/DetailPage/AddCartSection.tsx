@@ -7,6 +7,7 @@ interface CartSectionProps {
   selectedOptionID: number | undefined;
   resetOptionState: () => void;
   showModal: () => void;
+  onSelect?: (data: { name: string; amount: number }) => void;
 }
 
 export default function AddCartSection({

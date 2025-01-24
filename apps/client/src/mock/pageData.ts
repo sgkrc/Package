@@ -73,6 +73,30 @@ export const mainPage = [
     volume: "100,300,000",
     image: "/dogecoin.jpeg",
   },
+  {
+    id: 9,
+    title: "Russia x Ukraine ceasefire in 2025?",
+    volume: "123,300,000",
+    image: "/ruk.jpg",
+  },
+  {
+    id: 10,
+    title: "NBA Champion?",
+    volume: "150,000,000,000",
+    image: "/nba.jpeg",
+  },
+  {
+    id:11,
+    title: "Solana above $215 on January 29",
+    volume: "179,500,000,000",
+    image: "/solana.png",
+  },
+  {
+    id: 12,
+    title: "January 2025 Temperature Increase (ºC)?",
+    volume: "9,300,000",
+    image: "/earth.png",
+  },
 ];
 
 export const detailPage: DetailPageDatas = [
@@ -131,12 +155,12 @@ export const detailPage: DetailPageDatas = [
   {
     id: 5,
     title: "Elon Musk # of tweets January 10-17?",
-    volume: 12000,
+    volume: 8000000,
     image: "/elonmusk.webp",
     options: [
-      { name: "Option1", volume: 5000000 },
+      { name: "Option1", volume: 3000000 },
       { name: "Option2", volume: 2000000 },
-      { name: "Option3", volume: 100000 },
+      { name: "Option3", volume: 4000000 },
     ],
     like: true,
     price: 1,
@@ -144,12 +168,12 @@ export const detailPage: DetailPageDatas = [
   {
     id: 6,
     title: "Next President of Greece?",
-    volume: 1500000,
+    volume: 10000000,
     image: "/greece.jpg",
     options: [
       { name: "Option1", volume: 1000000 },
       { name: "Option2", volume: 3000000 },
-      { name: "Option3", volume: 7000000 },
+      { name: "Option3", volume: 2000000 },
     ],
     like: false,
     price: 1,
@@ -157,7 +181,7 @@ export const detailPage: DetailPageDatas = [
   {
     id: 7,
     title: "Premier League Winner?",
-    volume: 156720000,
+    volume: 15672000,
     image: "/premierleague.jpg",
     options: [
       { name: "Option1", volume: 15000000 },
@@ -170,14 +194,66 @@ export const detailPage: DetailPageDatas = [
   {
     id: 8,
     title: "Will DOGE hit 69¢ by Inauguration Day?",
-    volume: 100300000,
+    volume: 10000000,
     image: "/dogecoin.jpeg",
     options: [
-      { name: "Option1", volume: 1500000 },
-      { name: "Option2", volume: 7000000 },
+      { name: "Option1", volume: 5000000 },
+      { name: "Option2", volume: 6000000 },
       { name: "Option3", volume: 3400000 },
     ],
     like: true,
     price: 0.5,
+  },
+  {
+    id: 9,
+    title: "Russia x Ukraine ceasefire in 2025?",
+    volume: 10000000,
+    image: "/dogecoin.jpeg",
+    options: [
+      { name: "Option1", volume: 2000000 },
+      { name: "Option2", volume: 7000000 },
+      { name: "Option3", volume: 5600000 },
+    ],
+    like: true,
+    price: 0.9,
+  },
+  {
+    id: 10,
+    title: "NBA Champion?",
+    volume: 10000000,
+    image: "/dogecoin.jpeg",
+    options: [
+      { name: "Option1", volume: 5000000 },
+      { name: "Option2", volume: 6000000 },
+      { name: "Option3", volume: 3400000 },
+    ],
+    like: true,
+    price: 0.3,
+  },
+  {
+    id: 11,
+    title: "Solana above $215 on January 29",
+    volume: 10000000,
+    image: "/dogecoin.jpeg",
+    options: [
+      { name: "Option1", volume: 1000000 },
+      { name: "Option2", volume: 2000000 },
+      { name: "Option3", volume: 7400000 },
+    ],
+    like: true,
+    price: 1.8,
+  },
+  {
+    id: 12,
+    title: "January 2025 Temperature Increase (ºC)?",
+    volume: 10000000,
+    image: "/dogecoin.jpeg",
+    options: [
+      { name: "Option1", volume: 5000000 },
+      { name: "Option2", volume: 6000000 },
+      { name: "Option3", volume: 100000 },
+    ],
+    like: true,
+    price: 1.2,
   },
 ];

@@ -22,7 +22,7 @@ export default function TemporaryPortfolio() {
   return (
     <div className={s.pageContainer}>
       <div className={s.menuSection}>
-        <div className={s.titleContainer}></div>
+        <div className={s.titleContainer}>Portfolio</div>
         <div className={s.connectWallet}>{walletAddress? `Hello, ${walletAddress}`: "Please Connect Your Wallet First!"}</div>
       </div>
       <div className={s.content}>

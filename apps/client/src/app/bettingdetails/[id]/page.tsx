@@ -9,16 +9,17 @@ import Option from "@/components/DetailPage/Option";
 import LineGraph from "@/components/Graphs/LineGraph";
 import { useWallet } from "@/app/walletcontext";
 
+const id = () => Math.floor(Math.random() * 8) + 1;
+
 export default function EventDetails() {
   const [data, setData] = useState<DetailPageData>();
   const [like, setLike] = useState<boolean>(false);
   const { walletAddress } = useWallet();
-
-  const id = 4;
+  const generatedId = id();
 
   useEffect(() => {
     const preprocessedData = detailPage.find((item) => {
-      return item.id === id;
+      return item.id === generatedId;
     });
     console.log(`preprocessedData: ${preprocessedData}`);
     setData(preprocessedData);

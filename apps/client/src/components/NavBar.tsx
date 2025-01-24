@@ -41,8 +41,8 @@ const web3auth = new Web3Auth(web3AuthOptions);
 
 
 export default function Navbar() {
-  const { walletAddress, setWalletAddress } = useWallet();
-  const [provider, setProvider] = useState<IProvider | null>(null);
+  const { walletAddress, setWalletAddress, provider, setProvider } = useWallet();
+  // const [provider, setProvider] = useState<IProvider | null>(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const pathName = usePathname();
 
@@ -174,7 +174,7 @@ export default function Navbar() {
             className={`${s.portfolioInProgressDescription} ${pathName.includes("temporaryportfolio") ? s.active : ""
               }`}
           >
-            Temporary Portfolio
+            Portfolio
           </p>
         </Link>
         <Link
